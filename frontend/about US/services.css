@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: lightgreen;
+}
+.logo img{
+  height: 140px;
+
+}
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+nav a {
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover,
+nav a.active {
+  color: lightgreen;
+}
+.hero {
+  background: url('../assets/title-bar-bg.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(45deg, lightgreen, #00ffa2);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+.services-section {
+  padding: 80px 20px;
+  background: #0d0d0d;
+  color: #fff;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.8rem;
+  color: lightgreen;
+  margin-bottom: 10px;
+}
+
+.services-intro {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+.service-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 0 0 transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 255, 128, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: lightgreen;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-choose {
+  background: #000;
+  padding: 60px 20px;
+  text-align: center;
+}
+.why-choose h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00ff99;
+}
+.why-choose ul {
+  list-style: none;
+  max-width: 800px;
+  margin: auto;
+  padding: 0;
+}
+.why-choose li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  background: #161616;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-align: left;
+}
+.testimonials {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: lightgreen;
+}
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.testimonial {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 280px;
+  text-align: center;
+}
+.testimonial img {
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.testimonial p {
+  font-style: italic;
+  color: #ddd;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  font-size: 0.9rem;
+  color: #999;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: lightgreen;
+  color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: #00e68a;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    color: white;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111;
+    margin-top: 10px;
+  }
+  nav.active {
+    display: flex;
+  }
+  nav a {
+    padding: 10px 20px;
+    width: 100%;
+    border-bottom: 1px solid #222;
+  }
+  .service-cards,
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
