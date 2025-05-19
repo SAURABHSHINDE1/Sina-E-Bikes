@@ -298,7 +298,7 @@ mediaQuery.addEventListener("change", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   const bikes = [
     {
-      image: "../assets/bike-imge.png",
+      image: "./assets/bike-imge.png",
       title: "Sanjeevan BoltX",
       desc: "High-performance electric moped with smart tech.",
       range: "85 miles",
@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       motor: "7000W"
     },
     {
-      image: "../assets/bike-imge.png",
+      image: "./assets/bike-imge.png",
       title: "EcoRide Pro",
       desc: "Eco-friendly design with long-range capability.",
       range: "90 miles",
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
       motor: "6500W"
     },
     {
-      image: "../assets/bike-imge.png",
+      image: "./assets/bike-imge.png",
       title: "Urban Zip",
       desc: "Ideal for city commutes with lightweight frame.",
       range: "70 miles",
