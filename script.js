@@ -85,28 +85,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const bikes = [
     {
       image: "./frontend/assets/Untitled-1 copy.png",
-      title: "Sanjeevan BoltX",
+      title: "Power Sport-SL",
       desc: "High-performance electric moped with smart tech.",
-      range: "85 miles",
-      battery: "72V 40Ah",
+      range: "45 kms",
+      battery: "lead Acid 12v 28Ah",
       motor: "7000W",
     },
     {
-      image: "./frontend/assets/bike-imge.png",
-      title: "EcoRide Pro",
+      image: "./frontend/assets/Untitled-1 copy.png",
+      title: "RSV-4",
       desc: "Eco-friendly design with long-range capability.",
-      range: "90 miles",
-      battery: "60V 45Ah",
+      range: "45 kms",
+      battery: "lead Acid 12v 28Ah",
       motor: "6500W",
     },
     {
-      image: "./frontend/assets/bike-imge.png",
-      title: "Urban Zip",
+      image: "./frontend/assets/Untitled-1 copy.png",
+      title: "Eco-ZLR3",
       desc: "Ideal for city commutes with lightweight frame.",
-      range: "70 miles",
-      battery: "48V 30Ah",
+      range: "45 kms",
+      battery: "lead Acid 12v 28Ah",
       motor: "5000W",
     },
+
+     {
+      image: "./frontend/assets/Untitled-1 copy.png",
+      title: "Active-CS",
+      desc: "Ideal for city commutes with lightweight frame.",
+      range: "45 kms",
+      battery: "lead Acid 12v 28Ah",
+      motor: "5000W",
+    },
+
   ];
   const container = document.getElementById("bikeCards");
   bikes.forEach((bike) => {
@@ -124,15 +134,15 @@ document.addEventListener("DOMContentLoaded", () => {
           <strong>${bike.range}</strong>
         </div>
         <div class="spec-box">
-          <h4>Battery</h4>
-          <strong>${bike.battery}</strong>
-        </div>
-        <div class="spec-box">
           <h4>Motor</h4>
           <strong>${bike.motor}</strong>
         </div>
+        <div class="spec-box">
+          <h4>Battery</h4>
+          <strong>${bike.battery}</strong>
+        </div>
       </div>
-      <button class="order-btn">Order Now</button>
+      <button class="order-btn"><a href="">Contact Now</a></button>
     `;
     container.appendChild(card);
   });
@@ -166,11 +176,18 @@ function toggleMenu() {
 var menu = document.querySelector(".menu-icon");
 var close = document.querySelector(".ri-close-line");
 var tl = gsap.timeline();
-tl.to("#full", { top: 100, ease: "power4.inOut" });
+tl.to("#full", { top: 88, ease: "power4.inOut" });
 tl.pause();
 menu.addEventListener("click", function () {
   tl.play();
 });
 close.addEventListener("click", function () {
   tl.reverse();
+});
+
+body = document.querySelector("body");
+body.addEventListener("click", function (e) {
+  if (!e.target.closest(".menu-icon") && !e.target.closest("#nav-menu")) {
+    tl.reverse();
+  }
 });

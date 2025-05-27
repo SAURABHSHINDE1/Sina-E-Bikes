@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Bikes - Product Page</title>
+    <style>
+      body {
+        background: #0f0f0f;
+        color: #ffffff;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      .bike-model {
+        background: #1a1a1a;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 12px #00ffcc40;
+      }
+
+      .bike-model h2 {
+        margin-top: 0;
+        color: #00ffc8;
+        font-size: 1.6rem;
+      }
+
+      .bike-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        margin: 1rem 0;
+        border-radius: 10px;
+      }
+
+      .color-options {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 1rem;
+      }
+
+      .color-swatch {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid #fff;
+        transition: transform 0.2s;
+      }
+
+      .color-swatch:hover {
+        transform: scale(1.1);
+      }
+
+      .spec-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2b2b2b;
+        padding: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      .spec-toggle span.arrow {
+        transition: transform 0.3s ease;
+      }
+
+      .specs-content {
+        display: none;
+        padding: 1rem;
+        background: #222;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+      }
+
+      .specs-content ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .specs-content li {
+        padding: 0.4rem 0;
+        border-bottom: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Our Electric Bike Models</h1>
+
+    <!-- Start Bike Block -->
+    <div class="bike-model" id="bike1">
+      <h2>Model X1</h2>
+      <img
+        id="bike1-img"
+        class="bike-image"
+        src="./images/bikeimg.jpg"
+        alt="Model X1"
+      />
+      <div class="color-options">
+        <div
+          class="color-swatch"
+          style="background: red"
+          onclick="changeColor('bike1', 'red')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: blue"
+          onclick="changeColor('bike1', 'blue')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: black"
+          onclick="changeColor('bike1', 'black')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: green"
+          onclick="changeColor('bike1', 'green')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: orange"
+          onclick="changeColor('bike1', 'orange')"
+        ></div>
+      </div>
+
+      <div class="spec-toggle" onclick="toggleSpecs(this)">
+        <span>Specifications</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <div class="specs-content">
+        <ul>
+          <li><strong>Motor:</strong> 250W BLDC</li>
+          <li><strong>Controller:</strong> 48V Smart Controller</li>
+          <li><strong>Range:</strong> 80 km/charge</li>
+          <li><strong>Brake System:</strong> Dual Disc</li>
+          <li><strong>Battery Voltage:</strong> 48V</li>
+          <li><strong>Battery Type:</strong> Lithium-ion</li>
+          <li><strong>Charger:</strong> 48V/5A Smart Charger</li>
+          <li><strong>Charging Time:</strong> 4–5 hours</li>
+          <li>
+            <strong>Key Features:</strong> Reverse Mode, Anti-Theft, Keyless
+            Entry
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Bike Block -->
+
+    <!-- Duplicate for other models with updated IDs -->
+    <div class="bike-model" id="bike2">
+      <h2>Model Z2</h2>
+      <img
+        id="bike2-img"
+        class="bike-image"
+        src="./images/bikeimg.jpg"
+        alt="Model Z2"
+      />
+      <div class="color-options">
+        <div
+          class="color-swatch"
+          style="background: red"
+          onclick="changeColor('bike2', 'red')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: blue"
+          onclick="changeColor('bike2', 'blue')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: black"
+          onclick="changeColor('bike2', 'black')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: green"
+          onclick="changeColor('bike2', 'green')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: orange"
+          onclick="changeColor('bike2', 'orange')"
+        ></div>
+      </div>
+
+      <div class="spec-toggle" onclick="toggleSpecs(this)">
+        <span>Specifications</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <div class="specs-content">
+        <ul>
+          <li><strong>Motor:</strong> 250W BLDC</li>
+          <li><strong>Controller:</strong> 48V Smart Controller</li>
+          <li><strong>Range:</strong> 80 km/charge</li>
+          <li><strong>Brake System:</strong> Dual Disc</li>
+          <li><strong>Battery Voltage:</strong> 48V</li>
+          <li><strong>Battery Type:</strong> Lithium-ion</li>
+          <li><strong>Charger:</strong> 48V/5A Smart Charger</li>
+          <li><strong>Charging Time:</strong> 4–5 hours</li>
+          <li>
+            <strong>Key Features:</strong> Reverse Mode, Anti-Theft, Keyless
+            Entry
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bike-model" id="bike3">
+      <h2>Model R3</h2>
+      <img
+        id="bike3-img"
+        class="bike-image"
+        src="./images/bikeimg.jpg"
+        alt="Model R3"
+      />
+      <div class="color-options">
+        <div
+          class="color-swatch"
+          style="background: red"
+          onclick="changeColor('bike3', 'red')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: blue"
+          onclick="changeColor('bike3', 'blue')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: black"
+          onclick="changeColor('bike3', 'black')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: green"
+          onclick="changeColor('bike3', 'green')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: orange"
+          onclick="changeColor('bike3', 'orange')"
+        ></div>
+      </div>
+
+      <div class="spec-toggle" onclick="toggleSpecs(this)">
+        <span>Specifications</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <div class="specs-content">
+        <ul>
+          <li><strong>Motor:</strong> 250W BLDC</li>
+          <li><strong>Controller:</strong> 48V Smart Controller</li>
+          <li><strong>Range:</strong> 80 km/charge</li>
+          <li><strong>Brake System:</strong> Dual Disc</li>
+          <li><strong>Battery Voltage:</strong> 48V</li>
+          <li><strong>Battery Type:</strong> Lithium-ion</li>
+          <li><strong>Charger:</strong> 48V/5A Smart Charger</li>
+          <li><strong>Charging Time:</strong> 4–5 hours</li>
+          <li>
+            <strong>Key Features:</strong> Reverse Mode, Anti-Theft, Keyless
+            Entry
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bike-model" id="bike4">
+      <h2>Model F4</h2>
+      <img
+        id="bike4-img"
+        class="bike-image"
+        src="./images/bikeimg.jpg"
+        alt="Model F4"
+      />
+      <div class="color-options">
+        <div
+          class="color-swatch"
+          style="background: red"
+          onclick="changeColor('bike4', 'red')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: blue"
+          onclick="changeColor('bike4', 'blue')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: black"
+          onclick="changeColor('bike4', 'black')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: green"
+          onclick="changeColor('bike4', 'green')"
+        ></div>
+        <div
+          class="color-swatch"
+          style="background: orange"
+          onclick="changeColor('bike4', 'orange')"
+        ></div>
+      </div>
+
+      <div class="spec-toggle" onclick="toggleSpecs(this)">
+        <span>Specifications</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <div class="specs-content">
+        <ul>
+          <li><strong>Motor:</strong> 250W BLDC</li>
+          <li><strong>Controller:</strong> 48V Smart Controller</li>
+          <li><strong>Range:</strong> 80 km/charge</li>
+          <li><strong>Brake System:</strong> Dual Disc</li>
+          <li><strong>Battery Voltage:</strong> 48V</li>
+          <li><strong>Battery Type:</strong> Lithium-ion</li>
+          <li><strong>Charger:</strong> 48V/5A Smart Charger</li>
+          <li><strong>Charging Time:</strong> 4–5 hours</li>
+          <li>
+            <strong>Key Features:</strong> Reverse Mode, Anti-Theft, Keyless
+            Entry
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="product.js"></script>
+  </body>
+</html>
