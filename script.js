@@ -12,57 +12,75 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 const mediaQuery = window.matchMedia("(max-width: 768px)");
-function setupMobileSwiperAutoScroll() {
-  const swiperDiv = document.querySelector(".swiper-div");
-  if (!swiperDiv) return;
-  let autoScrollInterval;
-  let isUserInteracting = !1;
-  let interactionTimeout;
-  const startAutoScroll = () => {
-    stopAutoScroll();
-    autoScrollInterval = setInterval(() => {
-      if (!isUserInteracting) {
-        const nearEnd =
-          swiperDiv.scrollLeft + swiperDiv.clientWidth >=
-          swiperDiv.scrollWidth - 10;
-        if (nearEnd) {
-          swiperDiv.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          swiperDiv.scrollBy({ left: 130, behavior: "smooth" });
-        }
+let autoScrollInterval = null;
+let interactionTimeout = null;
+let isUserInteracting = false;
+let swiperDiv = null;
+
+function startAutoScroll() {
+  stopAutoScroll(); // Prevent multiple intervals
+
+  autoScrollInterval = setInterval(() => {
+    if (!isUserInteracting && swiperDiv) {
+      const nearEnd =
+        Math.ceil(swiperDiv.scrollLeft + swiperDiv.clientWidth) >= swiperDiv.scrollWidth - 10;
+      if (nearEnd) {
+        swiperDiv.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        swiperDiv.scrollBy({ left: 130, behavior: "smooth" });
       }
-    }, 3000);
-  };
-  const stopAutoScroll = () => {
+    }
+  }, 3000);
+}
+
+function stopAutoScroll() {
+  if (autoScrollInterval) {
     clearInterval(autoScrollInterval);
     autoScrollInterval = null;
-  };
-  const handleUserInteraction = () => {
-    isUserInteracting = !0;
-    stopAutoScroll();
-    clearTimeout(interactionTimeout);
-    interactionTimeout = setTimeout(() => {
-      isUserInteracting = !1;
-      startAutoScroll();
-    }, 4000);
-  };
-  swiperDiv.addEventListener("touchstart", handleUserInteraction, {
-    passive: !0,
-  });
-  swiperDiv.addEventListener("touchend", handleUserInteraction, {
-    passive: !0,
-  });
-  swiperDiv.addEventListener("scroll", handleUserInteraction, { passive: !0 });
+  }
+}
+
+function handleUserInteraction() {
+  isUserInteracting = true;
+  stopAutoScroll();
+
+  clearTimeout(interactionTimeout);
+  interactionTimeout = setTimeout(() => {
+    isUserInteracting = false;
+    startAutoScroll();
+  }, 4000);
+}
+
+function setupMobileSwiperAutoScroll() {
+  swiperDiv = document.querySelector(".swiper-div");
+  if (!swiperDiv) return;
+
+  // Clean existing listeners if any
+  swiperDiv.removeEventListener("touchstart", handleUserInteraction);
+  swiperDiv.removeEventListener("touchend", handleUserInteraction);
+  swiperDiv.removeEventListener("scroll", handleUserInteraction);
+
+  swiperDiv.addEventListener("touchstart", handleUserInteraction, { passive: true });
+  swiperDiv.addEventListener("touchend", handleUserInteraction, { passive: true });
+  swiperDiv.addEventListener("scroll", handleUserInteraction, { passive: true });
+
   startAutoScroll();
 }
+
+// Handle initial load
 if (mediaQuery.matches) {
   setupMobileSwiperAutoScroll();
 }
+
+// React to screen size changes
 mediaQuery.addEventListener("change", (e) => {
   if (e.matches) {
     setupMobileSwiperAutoScroll();
+  } else {
+    stopAutoScroll();
   }
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const bikes = [
     {
@@ -94,6 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
   bikes.forEach((bike) => {
     const card = document.createElement("div");
     card.className = "bike-card";
+    card.setAttribute("data-aos", "fade-up");
+    card.setAttribute("data-aos-duration", "1000");
     card.innerHTML = `
       <img src="${bike.image}" alt="${bike.title}" />
       <div class="bike-title">${bike.title}</div>
@@ -124,13 +144,13 @@ gsap.from(".logo,.nav-links a,#contact", {
   stagger: 0.2,
   ease: "power2.out",
 });
-gsap.from(".image-content", {
-  x: -800,
-  scale: 0,
-  duration: 2,
-  ease: "smooth",
-  opacity: 0,
-});
+// gsap.from(".image-content", {
+//   x: -800,
+//   scale: 0,
+//   duration: 2,
+//   ease: "smooth",
+//   opacity: 0,
+// });
 gsap.from(".info-box", {
   x: 100,
   opacity: 0,

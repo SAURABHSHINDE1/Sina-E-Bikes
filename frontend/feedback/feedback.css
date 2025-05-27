@@ -1,0 +1,119 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background-color: #0b0b0b;
+      color: #f1f1f1;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    /* HEADER */
+    header.feedback-hero {
+      background: url('/assets/title-bar-bg.jpg') no-repeat center center/cover;
+      height: 40vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    header.feedback-hero .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    header.feedback-hero h1 {
+      font-size: 2.8rem;
+      color: #fff;
+    }
+    header.feedback-hero p {
+      color: #90e0ef;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* FORM CONTAINER */
+    .feedback-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #141414;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+    }
+    .feedback-container h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+    .feedback-container p.subtitle {
+      text-align: center;
+      color: grey;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      color: #888;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+      transition: background-color 0.3s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #888;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      background-color: #333;
+    }
+
+    button {
+      background: linear-gradient(to right, #00ffaa, #90e0ef);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 0.5rem;
+    }
+    button:hover {
+      background: linear-gradient(to right, #90e0ef, #00ffaa);
+    }
+
+    @media (max-width: 768px) {
+      header.feedback-hero h1 {
+        font-size: 2rem;
+      }
+      .feedback-container {
+        padding: 1rem;
+      }
+    }

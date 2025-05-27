@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback - SINA E-BIKE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <header class="feedback-hero">
+    <div class="overlay">
+      <h1>We Value Your Feedback</h1>
+      <p>Help us improve by sharing your thoughts and suggestions.</p>
+    </div>
+  </header>
+
+  <!-- FEEDBACK FORM -->
+  <section class="feedback-container">
+    <h1>Feedback Form</h1>
+    <p class="subtitle">Please fill out the form below to send us your feedback.</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="aff3f06b-7e1a-45e8-953d-a0cb85858c16" />
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="phone">Contact Number (optional)</label>
+      <input type="tel" id="phone" name="phone" placeholder="Mobile number" />
+
+      <label for="rating">Overall Satisfaction</label>
+      <select id="rating" name="rating" required>
+        <option value="">-- Select Rating --</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Average">Average</option>
+        <option value="Poor">Poor</option>
+      </select>
+
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+</body>
+</html>

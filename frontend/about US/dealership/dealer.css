@@ -1,0 +1,175 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: #0b0b0b;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    /* ===== HERO HEADER ===== */
+    .dealership-hero {
+      background: url('/assets/title-bar-bg.jpg') no-repeat center center/cover;
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dealership-hero .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .dealership-hero h1 {
+      font-size: 2.8rem;
+      color: #fff;
+    }
+
+    .dealership-hero p {
+      color: #90e0ef;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== WHY PARTNER SECTION ===== */
+    .why-dealership {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .why-dealership h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .benefit-card {
+      background-color: #141414;
+      border: 1px solid #00ffaa20;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .benefit-card h3 {
+      color: #90e0ef;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+      color: #ddd;
+      font-size: 1rem;
+    }
+
+    /* ===== FORM SECTION ===== */
+    .dealership-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .dealership-container h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .dealership-container p.subtitle {
+      text-align: center;
+      color: grey;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    form {
+      background-color: #141414;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+    }
+
+    form input,
+    form select,
+    form textarea,
+    form button {
+      width: 100%;
+      padding: 0.9rem;
+      margin: 0.8rem 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
+
+    form input::placeholder,
+    form textarea::placeholder {
+      color: #888;
+    }
+
+    form button {
+      background: linear-gradient(to right, #00ffaa, #90e0ef);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: linear-gradient(to right, #90e0ef, #00ffaa);
+    }
+
+    label {
+      color: #888;
+      font-weight: 500;
+      margin-top: 10px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dealership-hero h1 {
+        font-size: 2rem;
+      }
+
+      .dealership-container {
+        padding: 1rem;
+      }
+    }
